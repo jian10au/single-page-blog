@@ -38,14 +38,20 @@ function showPostArea() {
     const newInput = document.createElement('input');
     newInput.setAttribute('class','inputBox')
     
-    const postBtn = document.createElement('button')
-    postBtn.setAttribute('class','postBtn')
+    const postBtn = document.createElement('button');
+    postBtn.setAttribute('class','postBtn');
     postBtn.innerHTML = 'POST'
+
+    
     
     newInput.setAttribute('type','text');
     body.appendChild(newForm);
     newForm.append(newInput);
     newForm.appendChild(postBtn)
+        
+    
+
+
 }
 
 // function addContent() {
@@ -64,6 +70,12 @@ userCommentElem.innerHTML = document.querySelector('.inputBox').value +
     " Posted at "
     + updatedTimeStr;
     body.appendChild(userCommentElem);
+
+
+const delBtn = document.createElement('button');
+    delBtn.setAttribute('class','postBtn');
+    delBtn.innerHTML = 'DELETE'
+    body.appendChild(delBtn);
 
 }
 

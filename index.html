@@ -60,10 +60,19 @@ function showPostArea() {
 
 // }
 
+function delComment() {
+    let pNodeLen = document.querySelectorAll('p').length;
+    let commentToBeDel = pNodeLen[lenght];
+    
+}
+
+
 function addContent(){
     const userCommentElem = document.createElement('p');
 //     body.appendChild(userCommentElem);
-    const updatedTimeStr = `${d.getHours()}:${d.getMinutes()} ${d.getMonth()+1}/${d.getFullYear()} AEDT`
+    const updatedTimeStr = `${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}  ${d.getMonth()+1}/${d.getFullYear()} AEDT`
+
+
 
 
 userCommentElem.innerHTML = document.querySelector('.inputBox').value + 
@@ -77,19 +86,15 @@ const delBtn = document.createElement('button');
     delBtn.innerHTML = 'DELETE'
     body.appendChild(delBtn);
 
+    delBtn.addEventListener('click',delComment)
+
 }
-
-
-// console.log(newForm);
 
 startBtn.addEventListener('click',
 
 () =>{  if(document.querySelector('.inputBox') === null)
         {showPostArea()};
         startBtn.disabled = true;
-//grey out the leave a comment button
-//again at the beginning I tried to write something like: 
-//this.disable = true; however, this will make 
 
     document.querySelector('.postBtn').addEventListener('click',addContent)
 

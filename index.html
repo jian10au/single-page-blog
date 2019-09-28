@@ -62,8 +62,10 @@ function showPostArea() {
 
 function delComment() {
     let pNodeLen = document.querySelectorAll('p').length;
-    let commentToBeDel = pNodeLen[lenght];
-    
+    let  delPosition = pNodeLen -1;
+    document.querySelectorAll('p')[delPosition].remove();
+
+
 }
 
 

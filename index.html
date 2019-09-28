@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    
+
+
+<div class="content-box">
+
+    <h2>HTML5 Basic Guide</h2>
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quaerat ullam iste ducimus aliquid temporibus nostrum dicta vel voluptatibus corrupti nisi laboriosam quam, unde sequi autem mollitia possimus praesentium assumenda.</p>
+
+    <button id="start-btn">Leave your comments</button> 
+
+</div>
+
+
+<script>
+
+const d = new Date();
+
+const startBtn = document.querySelector('#start-btn');
+const body = document.querySelector('body');
+
+function showPostArea() {
+    //creat form, create input div
+    const newForm = document.createElement('form');
+    newForm.setAttribute('onsubmit','return false')
+    const newInput = document.createElement('input');
+    newInput.setAttribute('class','inputBox')
+    
+    const postBtn = document.createElement('button')
+    postBtn.setAttribute('class','postBtn')
+    postBtn.innerHTML = 'POST'
+    
+    newInput.setAttribute('type','text');
+    body.appendChild(newForm);
+    newForm.append(newInput);
+    newForm.appendChild(postBtn)
+}
+
+// function addContent() {
+//     const userCommentElem = document.createElement('p');
+//     body.appendChild(userCommentElem);
+
+// }
+
+function addContent(){
+    const userCommentElem = document.createElement('p');
+//     body.appendChild(userCommentElem);
+    const updatedTimeStr = `${d.getHours()}:${d.getMinutes()} ${d.getMonth()+1}/${d.getFullYear()} AEDT`
+
+
+userCommentElem.innerHTML = document.querySelector('.inputBox').value + 
+    " Posted at "
+    + updatedTimeStr;
+    body.appendChild(userCommentElem);
+
+}
+
+
+// console.log(newForm);
+
+startBtn.addEventListener('click',
+
+() =>{  if(document.querySelector('.inputBox') === null)
+        {showPostArea()};
+        startBtn.disabled = true;
+//grey out the leave a comment button
+//again at the beginning I tried to write something like: 
+//this.disable = true; however, this will make 
+
+    document.querySelector('.postBtn').addEventListener('click',addContent)
+
+
+    });
+
+
+
+
+
+
+
+
+//here again, it appears that the event listener is not added to the 
+
+
+
+
+
+</script>
+    
+</body>
+</html>
